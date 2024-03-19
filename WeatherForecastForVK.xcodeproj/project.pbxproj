@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE0CB8802BA9C25E00A7291F /* WeatherForecastForVKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB87F2BA9C25E00A7291F /* WeatherForecastForVKApp.swift */; };
-		BE0CB8822BA9C25E00A7291F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8812BA9C25E00A7291F /* ContentView.swift */; };
-		BE0CB8842BA9C25F00A7291F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8832BA9C25F00A7291F /* Assets.xcassets */; };
-		BE0CB8882BA9C25F00A7291F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8872BA9C25F00A7291F /* Preview Assets.xcassets */; };
+		BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BA2BA9C88400A7291F /* AppDelegate.swift */; };
+		BE0CB8BD2BA9C88400A7291F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BC2BA9C88400A7291F /* SceneDelegate.swift */; };
+		BE0CB8BF2BA9C88400A7291F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BE2BA9C88400A7291F /* MainViewController.swift */; };
+		BE0CB8C42BA9C88400A7291F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8C32BA9C88400A7291F /* Assets.xcassets */; };
+		BE0CB8C72BA9C88400A7291F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8C62BA9C88400A7291F /* Base */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE0CB87C2BA9C25E00A7291F /* WeatherForecastForVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecastForVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE0CB87F2BA9C25E00A7291F /* WeatherForecastForVKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastForVKApp.swift; sourceTree = "<group>"; };
-		BE0CB8812BA9C25E00A7291F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BE0CB8832BA9C25F00A7291F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BE0CB8852BA9C25F00A7291F /* WeatherForecastForVK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherForecastForVK.entitlements; sourceTree = "<group>"; };
-		BE0CB8872BA9C25F00A7291F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BE0CB8B72BA9C88400A7291F /* WeatherForecastForVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecastForVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE0CB8BA2BA9C88400A7291F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE0CB8BC2BA9C88400A7291F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BE0CB8BE2BA9C88400A7291F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BE0CB8C32BA9C88400A7291F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE0CB8C62BA9C88400A7291F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE0CB8C82BA9C88400A7291F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BE0CB8792BA9C25E00A7291F /* Frameworks */ = {
+		BE0CB8B42BA9C88400A7291F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,52 +35,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE0CB8732BA9C25E00A7291F = {
+		BE0CB8AE2BA9C88400A7291F = {
 			isa = PBXGroup;
 			children = (
-				BE0CB87E2BA9C25E00A7291F /* WeatherForecastForVK */,
-				BE0CB87D2BA9C25E00A7291F /* Products */,
+				BE0CB8B92BA9C88400A7291F /* WeatherForecastForVK */,
+				BE0CB8B82BA9C88400A7291F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BE0CB87D2BA9C25E00A7291F /* Products */ = {
+		BE0CB8B82BA9C88400A7291F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE0CB87C2BA9C25E00A7291F /* WeatherForecastForVK.app */,
+				BE0CB8B72BA9C88400A7291F /* WeatherForecastForVK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BE0CB87E2BA9C25E00A7291F /* WeatherForecastForVK */ = {
+		BE0CB8B92BA9C88400A7291F /* WeatherForecastForVK */ = {
 			isa = PBXGroup;
 			children = (
-				BE0CB87F2BA9C25E00A7291F /* WeatherForecastForVKApp.swift */,
-				BE0CB8812BA9C25E00A7291F /* ContentView.swift */,
-				BE0CB8832BA9C25F00A7291F /* Assets.xcassets */,
-				BE0CB8852BA9C25F00A7291F /* WeatherForecastForVK.entitlements */,
-				BE0CB8862BA9C25F00A7291F /* Preview Content */,
+				BE0CB8CF2BA9CA4500A7291F /* Configuration */,
+				BE0CB8CE2BA9CA1B00A7291F /* Application */,
+				BE0CB8BE2BA9C88400A7291F /* MainViewController.swift */,
+				BE0CB8D12BA9CA6900A7291F /* Resources */,
+				BE0CB8D02BA9CA5000A7291F /* Storyboard */,
 			);
 			path = WeatherForecastForVK;
 			sourceTree = "<group>";
 		};
-		BE0CB8862BA9C25F00A7291F /* Preview Content */ = {
+		BE0CB8CE2BA9CA1B00A7291F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				BE0CB8872BA9C25F00A7291F /* Preview Assets.xcassets */,
+				BE0CB8BA2BA9C88400A7291F /* AppDelegate.swift */,
+				BE0CB8BC2BA9C88400A7291F /* SceneDelegate.swift */,
 			);
-			path = "Preview Content";
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BE0CB8CF2BA9CA4500A7291F /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8C82BA9C88400A7291F /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		BE0CB8D02BA9CA5000A7291F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8C52BA9C88400A7291F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		BE0CB8D12BA9CA6900A7291F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8C32BA9C88400A7291F /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BE0CB87B2BA9C25E00A7291F /* WeatherForecastForVK */ = {
+		BE0CB8B62BA9C88400A7291F /* WeatherForecastForVK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE0CB88B2BA9C25F00A7291F /* Build configuration list for PBXNativeTarget "WeatherForecastForVK" */;
+			buildConfigurationList = BE0CB8CB2BA9C88400A7291F /* Build configuration list for PBXNativeTarget "WeatherForecastForVK" */;
 			buildPhases = (
-				BE0CB8782BA9C25E00A7291F /* Sources */,
-				BE0CB8792BA9C25E00A7291F /* Frameworks */,
-				BE0CB87A2BA9C25E00A7291F /* Resources */,
+				BE0CB8B32BA9C88400A7291F /* Sources */,
+				BE0CB8B42BA9C88400A7291F /* Frameworks */,
+				BE0CB8B52BA9C88400A7291F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -86,25 +113,25 @@
 			);
 			name = WeatherForecastForVK;
 			productName = WeatherForecastForVK;
-			productReference = BE0CB87C2BA9C25E00A7291F /* WeatherForecastForVK.app */;
+			productReference = BE0CB8B72BA9C88400A7291F /* WeatherForecastForVK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BE0CB8742BA9C25E00A7291F /* Project object */ = {
+		BE0CB8AF2BA9C88400A7291F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					BE0CB87B2BA9C25E00A7291F = {
+					BE0CB8B62BA9C88400A7291F = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
-			buildConfigurationList = BE0CB8772BA9C25E00A7291F /* Build configuration list for PBXProject "WeatherForecastForVK" */;
+			buildConfigurationList = BE0CB8B22BA9C88400A7291F /* Build configuration list for PBXProject "WeatherForecastForVK" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,42 +139,54 @@
 				en,
 				Base,
 			);
-			mainGroup = BE0CB8732BA9C25E00A7291F;
-			productRefGroup = BE0CB87D2BA9C25E00A7291F /* Products */;
+			mainGroup = BE0CB8AE2BA9C88400A7291F;
+			productRefGroup = BE0CB8B82BA9C88400A7291F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BE0CB87B2BA9C25E00A7291F /* WeatherForecastForVK */,
+				BE0CB8B62BA9C88400A7291F /* WeatherForecastForVK */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BE0CB87A2BA9C25E00A7291F /* Resources */ = {
+		BE0CB8B52BA9C88400A7291F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0CB8882BA9C25F00A7291F /* Preview Assets.xcassets in Resources */,
-				BE0CB8842BA9C25F00A7291F /* Assets.xcassets in Resources */,
+				BE0CB8C42BA9C88400A7291F /* Assets.xcassets in Resources */,
+				BE0CB8C72BA9C88400A7291F /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BE0CB8782BA9C25E00A7291F /* Sources */ = {
+		BE0CB8B32BA9C88400A7291F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0CB8822BA9C25E00A7291F /* ContentView.swift in Sources */,
-				BE0CB8802BA9C25E00A7291F /* WeatherForecastForVKApp.swift in Sources */,
+				BE0CB8BF2BA9C88400A7291F /* MainViewController.swift in Sources */,
+				BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */,
+				BE0CB8BD2BA9C88400A7291F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		BE0CB8C52BA9C88400A7291F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE0CB8C62BA9C88400A7291F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		BE0CB8892BA9C25F00A7291F /* Debug */ = {
+		BE0CB8C92BA9C88400A7291F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -199,16 +238,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		BE0CB88A2BA9C25F00A7291F /* Release */ = {
+		BE0CB8CA2BA9C88400A7291F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -254,111 +295,104 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		BE0CB88C2BA9C25F00A7291F /* Debug */ = {
+		BE0CB8CC2BA9C88400A7291F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WeatherForecastForVK/WeatherForecastForVK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeatherForecastForVK/Preview Content\"";
 				DEVELOPMENT_TEAM = 3YZWNV863X;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				INFOPLIST_FILE = WeatherForecastForVK/Configuration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WeatherForecastForVK;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pavel.afanasev.WeatherForecastForVK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		BE0CB88D2BA9C25F00A7291F /* Release */ = {
+		BE0CB8CD2BA9C88400A7291F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WeatherForecastForVK/WeatherForecastForVK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WeatherForecastForVK/Preview Content\"";
 				DEVELOPMENT_TEAM = 3YZWNV863X;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				INFOPLIST_FILE = WeatherForecastForVK/Configuration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WeatherForecastForVK;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = pavel.afanasev.WeatherForecastForVK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BE0CB8772BA9C25E00A7291F /* Build configuration list for PBXProject "WeatherForecastForVK" */ = {
+		BE0CB8B22BA9C88400A7291F /* Build configuration list for PBXProject "WeatherForecastForVK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE0CB8892BA9C25F00A7291F /* Debug */,
-				BE0CB88A2BA9C25F00A7291F /* Release */,
+				BE0CB8C92BA9C88400A7291F /* Debug */,
+				BE0CB8CA2BA9C88400A7291F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE0CB88B2BA9C25F00A7291F /* Build configuration list for PBXNativeTarget "WeatherForecastForVK" */ = {
+		BE0CB8CB2BA9C88400A7291F /* Build configuration list for PBXNativeTarget "WeatherForecastForVK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE0CB88C2BA9C25F00A7291F /* Debug */,
-				BE0CB88D2BA9C25F00A7291F /* Release */,
+				BE0CB8CC2BA9C88400A7291F /* Debug */,
+				BE0CB8CD2BA9C88400A7291F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BE0CB8742BA9C25E00A7291F /* Project object */;
+	rootObject = BE0CB8AF2BA9C88400A7291F /* Project object */;
 }
