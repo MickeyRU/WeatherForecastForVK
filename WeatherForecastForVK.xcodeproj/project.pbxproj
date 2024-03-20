@@ -9,19 +9,27 @@
 /* Begin PBXBuildFile section */
 		BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BA2BA9C88400A7291F /* AppDelegate.swift */; };
 		BE0CB8BD2BA9C88400A7291F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BC2BA9C88400A7291F /* SceneDelegate.swift */; };
-		BE0CB8BF2BA9C88400A7291F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BE2BA9C88400A7291F /* MainViewController.swift */; };
+		BE0CB8BF2BA9C88400A7291F /* UserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BE2BA9C88400A7291F /* UserLocationViewController.swift */; };
 		BE0CB8C42BA9C88400A7291F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8C32BA9C88400A7291F /* Assets.xcassets */; };
 		BE0CB8C72BA9C88400A7291F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8C62BA9C88400A7291F /* Base */; };
+		BE0CB8DB2BAAF85F00A7291F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8DA2BAAF85F00A7291F /* NavigationRouter.swift */; };
+		BE0CB8E02BAAFC0C00A7291F /* OtherLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */; };
+		BE0CB8E32BAB018900A7291F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E22BAB018900A7291F /* FooterView.swift */; };
+		BE0CB8E52BAB0F2800A7291F /* CurrentLocTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE0CB8B72BA9C88400A7291F /* WeatherForecastForVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecastForVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0CB8BA2BA9C88400A7291F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE0CB8BC2BA9C88400A7291F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BE0CB8BE2BA9C88400A7291F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BE0CB8BE2BA9C88400A7291F /* UserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationViewController.swift; sourceTree = "<group>"; };
 		BE0CB8C32BA9C88400A7291F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE0CB8C62BA9C88400A7291F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE0CB8C82BA9C88400A7291F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE0CB8DA2BAAF85F00A7291F /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherLocationViewController.swift; sourceTree = "<group>"; };
+		BE0CB8E22BAB018900A7291F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocTemperatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,8 @@
 			children = (
 				BE0CB8CF2BA9CA4500A7291F /* Configuration */,
 				BE0CB8CE2BA9CA1B00A7291F /* Application */,
-				BE0CB8BE2BA9C88400A7291F /* MainViewController.swift */,
+				BE0CB8D22BAAF65B00A7291F /* Navigation */,
+				BE0CB8DC2BAAFB9000A7291F /* UI */,
 				BE0CB8D12BA9CA6900A7291F /* Resources */,
 				BE0CB8D02BA9CA5000A7291F /* Storyboard */,
 			);
@@ -94,6 +103,49 @@
 				BE0CB8C32BA9C88400A7291F /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE0CB8D22BAAF65B00A7291F /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8DA2BAAF85F00A7291F /* NavigationRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		BE0CB8DC2BAAFB9000A7291F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8DE2BAAFBA800A7291F /* OtherLocationsFlow */,
+				BE0CB8DD2BAAFB9A00A7291F /* UserLocationFlow */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BE0CB8DD2BAAFB9A00A7291F /* UserLocationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8E12BAB016A00A7291F /* Views */,
+			);
+			path = UserLocationFlow;
+			sourceTree = "<group>";
+		};
+		BE0CB8DE2BAAFBA800A7291F /* OtherLocationsFlow */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */,
+			);
+			path = OtherLocationsFlow;
+			sourceTree = "<group>";
+		};
+		BE0CB8E12BAB016A00A7291F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8BE2BA9C88400A7291F /* UserLocationViewController.swift */,
+				BE0CB8E22BAB018900A7291F /* FooterView.swift */,
+				BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE0CB8BF2BA9C88400A7291F /* MainViewController.swift in Sources */,
+				BE0CB8E52BAB0F2800A7291F /* CurrentLocTemperatureView.swift in Sources */,
+				BE0CB8E02BAAFC0C00A7291F /* OtherLocationViewController.swift in Sources */,
+				BE0CB8BF2BA9C88400A7291F /* UserLocationViewController.swift in Sources */,
 				BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */,
+				BE0CB8E32BAB018900A7291F /* FooterView.swift in Sources */,
+				BE0CB8DB2BAAF85F00A7291F /* NavigationRouter.swift in Sources */,
 				BE0CB8BD2BA9C88400A7291F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
