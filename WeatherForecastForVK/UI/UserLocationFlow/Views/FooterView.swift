@@ -12,7 +12,7 @@ final class FooterView: UIView {
     private lazy var userLocationButton: UIButton = {
         let button = UIButton()
         button.setImage(.currentLocation, for: .normal)
-        button.tintColor = .primaryWhite
+        button.tintColor = .primaryWhiteBlack
         button.addTarget(self, action: #selector(userLocationButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -20,7 +20,7 @@ final class FooterView: UIView {
     private lazy var otherLocationButton: UIButton = {
         let button = UIButton()
         button.setImage(.listWithLocations, for: .normal)
-        button.tintColor = .primaryWhite
+        button.tintColor = .primaryWhiteBlack
         button.addTarget(self, action: #selector(otherLocationButtonTapped), for: .touchUpInside)
         return button
     }()

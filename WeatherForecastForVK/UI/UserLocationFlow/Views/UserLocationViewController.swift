@@ -11,6 +11,8 @@ final class UserLocationViewController: UIViewController {
         return imageView
     }()
     
+    private let temperatureView = CurrentLocTemperatureView()
+    
     private let footerView = FooterView()
         
     init(router: NavigationRouterProtocol) {
@@ -28,14 +30,20 @@ final class UserLocationViewController: UIViewController {
     }
     
     private func setupViews() {
-        [bgImageView, footerView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-        [bgImageView, footerView].forEach { view.addSubview($0) }
+        [bgImageView, footerView, temperatureView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        [bgImageView, footerView, temperatureView].forEach { view.addSubview($0) }
         
         NSLayoutConstraint.activate([
             bgImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bgImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             bgImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bgImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            
+            temperatureView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            temperatureView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            temperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            temperatureView.heightAnchor.constraint(equalToConstant: view.bounds.height / 4),
+
             
             footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

@@ -16,6 +16,7 @@
 		BE0CB8E02BAAFC0C00A7291F /* OtherLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */; };
 		BE0CB8E32BAB018900A7291F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E22BAB018900A7291F /* FooterView.swift */; };
 		BE0CB8E52BAB0F2800A7291F /* CurrentLocTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */; };
+		BE0CB8EA2BAB20BB00A7291F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E92BAB20BB00A7291F /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherLocationViewController.swift; sourceTree = "<group>"; };
 		BE0CB8E22BAB018900A7291F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocTemperatureView.swift; sourceTree = "<group>"; };
+		BE0CB8E92BAB20BB00A7291F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		BE0CB8B92BA9C88400A7291F /* WeatherForecastForVK */ = {
 			isa = PBXGroup;
 			children = (
+				BE0CB8E62BAB11C300A7291F /* Design */,
 				BE0CB8CF2BA9CA4500A7291F /* Configuration */,
 				BE0CB8CE2BA9CA1B00A7291F /* Application */,
 				BE0CB8D22BAAF65B00A7291F /* Navigation */,
@@ -148,6 +151,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BE0CB8E62BAB11C300A7291F /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8E92BAB20BB00A7291F /* Fonts.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0CB8EA2BAB20BB00A7291F /* Fonts.swift in Sources */,
 				BE0CB8E52BAB0F2800A7291F /* CurrentLocTemperatureView.swift in Sources */,
 				BE0CB8E02BAAFC0C00A7291F /* OtherLocationViewController.swift in Sources */,
 				BE0CB8BF2BA9C88400A7291F /* UserLocationViewController.swift in Sources */,
