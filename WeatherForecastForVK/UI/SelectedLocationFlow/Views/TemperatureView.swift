@@ -1,13 +1,11 @@
 import UIKit
 
-final class CurrentLocTemperatureView: UIView {
-    
+final class TemperatureView: UIView {
     private let locationLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.regular34
         label.textColor = .primaryWhiteBlack
         label.textAlignment = .center
-        label.text = "Montreal"
         return label
     }()
     
@@ -16,7 +14,6 @@ final class CurrentLocTemperatureView: UIView {
         label.font = AppFonts.thin96
         label.textColor = .primaryWhiteBlack
         label.textAlignment = .center
-        label.text = "19°"
         return label
     }()
     
@@ -25,7 +22,6 @@ final class CurrentLocTemperatureView: UIView {
         label.font = AppFonts.semibold20
         label.textColor = .secondaryGray
         label.textAlignment = .center
-        label.text = "Mostly Clear"
         return label
     }()
     
@@ -34,7 +30,6 @@ final class CurrentLocTemperatureView: UIView {
         label.font = AppFonts.semibold20
         label.textColor = .primaryWhiteBlack
         label.textAlignment = .center
-        label.text = "H:24"
         return label
     }()
     
@@ -43,7 +38,6 @@ final class CurrentLocTemperatureView: UIView {
         label.font = AppFonts.semibold20
         label.textColor = .primaryWhiteBlack
         label.textAlignment = .center
-        label.text = "L:24"
         return label
     }()
     
@@ -73,6 +67,14 @@ final class CurrentLocTemperatureView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateUI(with model: SelectedLocationUIModel) {
+        self.locationLabel.text = model.location
+        self.temperatureLabel.text = model.temperature
+        self.hTemperatureLabel.text = model.hTemperature
+        self.lTemperatureLabel.text = model.lTemperature
+        self.weatherConditionsLabel.text = model.weatherConditions
     }
     
     private func setupViews() {

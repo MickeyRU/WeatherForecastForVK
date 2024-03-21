@@ -9,29 +9,41 @@
 /* Begin PBXBuildFile section */
 		BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BA2BA9C88400A7291F /* AppDelegate.swift */; };
 		BE0CB8BD2BA9C88400A7291F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BC2BA9C88400A7291F /* SceneDelegate.swift */; };
-		BE0CB8BF2BA9C88400A7291F /* UserLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BE2BA9C88400A7291F /* UserLocationViewController.swift */; };
+		BE0CB8BF2BA9C88400A7291F /* SelectedLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8BE2BA9C88400A7291F /* SelectedLocationViewController.swift */; };
 		BE0CB8C42BA9C88400A7291F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8C32BA9C88400A7291F /* Assets.xcassets */; };
 		BE0CB8C72BA9C88400A7291F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB8C62BA9C88400A7291F /* Base */; };
 		BE0CB8DB2BAAF85F00A7291F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8DA2BAAF85F00A7291F /* NavigationRouter.swift */; };
 		BE0CB8E02BAAFC0C00A7291F /* OtherLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */; };
 		BE0CB8E32BAB018900A7291F /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E22BAB018900A7291F /* FooterView.swift */; };
-		BE0CB8E52BAB0F2800A7291F /* CurrentLocTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */; };
+		BE0CB8E52BAB0F2800A7291F /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E42BAB0F2800A7291F /* TemperatureView.swift */; };
 		BE0CB8EA2BAB20BB00A7291F /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8E92BAB20BB00A7291F /* Fonts.swift */; };
+		BE0CB8ED2BAC4EC600A7291F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8EC2BAC4EC600A7291F /* LocationService.swift */; };
+		BE0CB8EF2BAC526200A7291F /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8EE2BAC526200A7291F /* WeatherService.swift */; };
+		BE0CB8F32BAC561B00A7291F /* SelectedLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8F22BAC561B00A7291F /* SelectedLocationViewModel.swift */; };
+		BE0CB8F52BAC5CDC00A7291F /* WeatherUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8F42BAC5CDC00A7291F /* WeatherUIModel.swift */; };
+		BE0CB8F72BAC5E6D00A7291F /* WeatherModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8F62BAC5E6D00A7291F /* WeatherModels.swift */; };
+		BE0CB8FE2BAC63CF00A7291F /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8FD2BAC63CF00A7291F /* LocationModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE0CB8B72BA9C88400A7291F /* WeatherForecastForVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecastForVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE0CB8BA2BA9C88400A7291F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE0CB8BC2BA9C88400A7291F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BE0CB8BE2BA9C88400A7291F /* UserLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationViewController.swift; sourceTree = "<group>"; };
+		BE0CB8BE2BA9C88400A7291F /* SelectedLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewController.swift; sourceTree = "<group>"; };
 		BE0CB8C32BA9C88400A7291F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE0CB8C62BA9C88400A7291F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE0CB8C82BA9C88400A7291F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE0CB8DA2BAAF85F00A7291F /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherLocationViewController.swift; sourceTree = "<group>"; };
 		BE0CB8E22BAB018900A7291F /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
-		BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocTemperatureView.swift; sourceTree = "<group>"; };
+		BE0CB8E42BAB0F2800A7291F /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		BE0CB8E92BAB20BB00A7291F /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		BE0CB8EC2BAC4EC600A7291F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		BE0CB8EE2BAC526200A7291F /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		BE0CB8F22BAC561B00A7291F /* SelectedLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedLocationViewModel.swift; sourceTree = "<group>"; };
+		BE0CB8F42BAC5CDC00A7291F /* WeatherUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUIModel.swift; sourceTree = "<group>"; };
+		BE0CB8F62BAC5E6D00A7291F /* WeatherModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModels.swift; sourceTree = "<group>"; };
+		BE0CB8FD2BAC63CF00A7291F /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +80,10 @@
 				BE0CB8CF2BA9CA4500A7291F /* Configuration */,
 				BE0CB8CE2BA9CA1B00A7291F /* Application */,
 				BE0CB8D22BAAF65B00A7291F /* Navigation */,
+				BE0CB8FA2BAC5EA100A7291F /* Data */,
 				BE0CB8DC2BAAFB9000A7291F /* UI */,
+				BE0CB8EB2BAC4E8400A7291F /* Services */,
+				BE0CB8FC2BAC607400A7291F /* Extensions */,
 				BE0CB8D12BA9CA6900A7291F /* Resources */,
 				BE0CB8D02BA9CA5000A7291F /* Storyboard */,
 			);
@@ -120,17 +135,19 @@
 			isa = PBXGroup;
 			children = (
 				BE0CB8DE2BAAFBA800A7291F /* OtherLocationsFlow */,
-				BE0CB8DD2BAAFB9A00A7291F /* UserLocationFlow */,
+				BE0CB8DD2BAAFB9A00A7291F /* SelectedLocationFlow */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		BE0CB8DD2BAAFB9A00A7291F /* UserLocationFlow */ = {
+		BE0CB8DD2BAAFB9A00A7291F /* SelectedLocationFlow */ = {
 			isa = PBXGroup;
 			children = (
+				BE0CB8F12BAC548D00A7291F /* Models */,
 				BE0CB8E12BAB016A00A7291F /* Views */,
+				BE0CB8F02BAC547D00A7291F /* ViewModels */,
 			);
-			path = UserLocationFlow;
+			path = SelectedLocationFlow;
 			sourceTree = "<group>";
 		};
 		BE0CB8DE2BAAFBA800A7291F /* OtherLocationsFlow */ = {
@@ -144,9 +161,9 @@
 		BE0CB8E12BAB016A00A7291F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BE0CB8BE2BA9C88400A7291F /* UserLocationViewController.swift */,
+				BE0CB8BE2BA9C88400A7291F /* SelectedLocationViewController.swift */,
 				BE0CB8E22BAB018900A7291F /* FooterView.swift */,
-				BE0CB8E42BAB0F2800A7291F /* CurrentLocTemperatureView.swift */,
+				BE0CB8E42BAB0F2800A7291F /* TemperatureView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +174,55 @@
 				BE0CB8E92BAB20BB00A7291F /* Fonts.swift */,
 			);
 			path = Design;
+			sourceTree = "<group>";
+		};
+		BE0CB8EB2BAC4E8400A7291F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8EC2BAC4EC600A7291F /* LocationService.swift */,
+				BE0CB8EE2BAC526200A7291F /* WeatherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BE0CB8F02BAC547D00A7291F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8F22BAC561B00A7291F /* SelectedLocationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BE0CB8F12BAC548D00A7291F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8F42BAC5CDC00A7291F /* WeatherUIModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE0CB8FA2BAC5EA100A7291F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8FB2BAC5EAE00A7291F /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BE0CB8FB2BAC5EAE00A7291F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB8F62BAC5E6D00A7291F /* WeatherModels.swift */,
+				BE0CB8FD2BAC63CF00A7291F /* LocationModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE0CB8FC2BAC607400A7291F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,13 +295,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0CB8EF2BAC526200A7291F /* WeatherService.swift in Sources */,
 				BE0CB8EA2BAB20BB00A7291F /* Fonts.swift in Sources */,
-				BE0CB8E52BAB0F2800A7291F /* CurrentLocTemperatureView.swift in Sources */,
+				BE0CB8F72BAC5E6D00A7291F /* WeatherModels.swift in Sources */,
+				BE0CB8E52BAB0F2800A7291F /* TemperatureView.swift in Sources */,
+				BE0CB8FE2BAC63CF00A7291F /* LocationModels.swift in Sources */,
 				BE0CB8E02BAAFC0C00A7291F /* OtherLocationViewController.swift in Sources */,
-				BE0CB8BF2BA9C88400A7291F /* UserLocationViewController.swift in Sources */,
+				BE0CB8F32BAC561B00A7291F /* SelectedLocationViewModel.swift in Sources */,
+				BE0CB8BF2BA9C88400A7291F /* SelectedLocationViewController.swift in Sources */,
 				BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */,
 				BE0CB8E32BAB018900A7291F /* FooterView.swift in Sources */,
 				BE0CB8DB2BAAF85F00A7291F /* NavigationRouter.swift in Sources */,
+				BE0CB8ED2BAC4EC600A7291F /* LocationService.swift in Sources */,
+				BE0CB8F52BAC5CDC00A7291F /* WeatherUIModel.swift in Sources */,
 				BE0CB8BD2BA9C88400A7291F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

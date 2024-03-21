@@ -1,8 +1,9 @@
 import UIKit
+import Combine
 
-final class UserLocationViewController: UIViewController {
-    
+final class SelectedLocationViewController: UIViewController {
     private let router: NavigationRouterProtocol
+    private let viewModel: SelectedLocationViewModelProtocol
     
     private let bgImageView: UIImageView = {
         let imageView = UIImageView()
@@ -11,13 +12,16 @@ final class UserLocationViewController: UIViewController {
         return imageView
     }()
     
-    private let temperatureView = CurrentLocTemperatureView()
-    
+    private let temperatureView = TemperatureView()
     private let footerView = FooterView()
-        
-    init(router: NavigationRouterProtocol) {
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(router: NavigationRouterProtocol, viewModel: SelectedLocationViewModelProtocol) {
         self.router = router
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        setupBindings()
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +31,25 @@ final class UserLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+    
+    private func setupBindings() {
+        viewModel.selectedLocationPublisher
+            .sink { [weak self] model in
+                guard let self = self,
+                      let model = model
+                else { return }
+                DispatchQueue.main.async {
+                    self.temperatureView.updateUI(with: model)
+                }
+            }
+            .store(in: &cancellables)
+        
+        footerView.userLocationButtonTappedPublisher
+            .sink {[weak self] _ in
+                self?.viewModel.requestLocationAndWeather()
+            }
+            .store(in: &cancellables)
     }
     
     private func setupViews() {
@@ -43,7 +66,7 @@ final class UserLocationViewController: UIViewController {
             temperatureView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             temperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             temperatureView.heightAnchor.constraint(equalToConstant: view.bounds.height / 4),
-
+            
             
             footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
