@@ -67,7 +67,6 @@ final class SelectedLocationViewController: UIViewController {
             temperatureView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             temperatureView.heightAnchor.constraint(equalToConstant: view.bounds.height / 4),
             
-            
             footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             footerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

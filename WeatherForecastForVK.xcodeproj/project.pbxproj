@@ -23,6 +23,7 @@
 		BE0CB8F52BAC5CDC00A7291F /* WeatherUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8F42BAC5CDC00A7291F /* WeatherUIModel.swift */; };
 		BE0CB8F72BAC5E6D00A7291F /* WeatherModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8F62BAC5E6D00A7291F /* WeatherModels.swift */; };
 		BE0CB8FE2BAC63CF00A7291F /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB8FD2BAC63CF00A7291F /* LocationModels.swift */; };
+		BE0CB9012BAC725900A7291F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB9002BAC725800A7291F /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		BE0CB8F42BAC5CDC00A7291F /* WeatherUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUIModel.swift; sourceTree = "<group>"; };
 		BE0CB8F62BAC5E6D00A7291F /* WeatherModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModels.swift; sourceTree = "<group>"; };
 		BE0CB8FD2BAC63CF00A7291F /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
+		BE0CB9002BAC725800A7291F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				BE0CB8FC2BAC607400A7291F /* Extensions */,
 				BE0CB8D12BA9CA6900A7291F /* Resources */,
 				BE0CB8D02BA9CA5000A7291F /* Storyboard */,
+				BE0CB8FF2BAC723200A7291F /* Localization */,
 			);
 			path = WeatherForecastForVK;
 			sourceTree = "<group>";
@@ -225,6 +228,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BE0CB8FF2BAC723200A7291F /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				BE0CB9002BAC725800A7291F /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,6 +278,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = BE0CB8AE2BA9C88400A7291F;
 			productRefGroup = BE0CB8B82BA9C88400A7291F /* Products */;
@@ -285,6 +297,7 @@
 			files = (
 				BE0CB8C42BA9C88400A7291F /* Assets.xcassets in Resources */,
 				BE0CB8C72BA9C88400A7291F /* Base in Resources */,
+				BE0CB9012BAC725900A7291F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

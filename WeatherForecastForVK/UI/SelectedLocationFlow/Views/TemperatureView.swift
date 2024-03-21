@@ -44,7 +44,8 @@ final class TemperatureView: UIView {
     private lazy var temperatureStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .center
         return stackView
     }()
     
@@ -78,16 +79,21 @@ final class TemperatureView: UIView {
     }
     
     private func setupViews() {
-        [locationLabel, temperatureLabel, weatherConditionsLabel].forEach { verticalStackView.addArrangedSubview($0) }
         [hTemperatureLabel, lTemperatureLabel].forEach { temperatureStackView.addArrangedSubview($0) }
-        [temperatureStackView, weatherConditionsStackView].forEach { verticalStackView.addArrangedSubview($0) }
+        [weatherConditionsLabel, temperatureStackView].forEach { weatherConditionsStackView.addArrangedSubview($0) }
+        [locationLabel, temperatureLabel, weatherConditionsStackView].forEach { verticalStackView.addArrangedSubview($0) }
         
         addSubview(verticalStackView)
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         
+        let sidePadding: CGFloat = 20 // Отступ с боков
+        
         NSLayoutConstraint.activate([
-            verticalStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            verticalStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
+               verticalStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+               verticalStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+               verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: sidePadding),
+               verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -sidePadding),
+               verticalStackView.widthAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.width - 2 * sidePadding)
+           ])
     }
 }

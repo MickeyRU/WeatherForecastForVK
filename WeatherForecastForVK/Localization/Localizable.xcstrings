@@ -1,0 +1,22 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Unknowed location" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknowed location"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неизвестное местоположение"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

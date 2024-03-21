@@ -48,7 +48,7 @@ extension LocationService: CLLocationManagerDelegate {
             let locationInfo = LocationInfo(
                 latitude: location.coordinate.latitude,
                 longitude: location.coordinate.longitude,
-                placeName: placemark?.locality ?? "Неизвестное местоположение"
+                placeName: placemark?.locality ?? NSLocalizedString("Unknowed location", tableName: "Localizable", comment: "")
             )
             self?.currentLocationSubject.send(locationInfo)
         }
