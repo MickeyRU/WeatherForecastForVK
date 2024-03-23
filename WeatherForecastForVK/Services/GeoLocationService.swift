@@ -1,12 +1,12 @@
 import CoreLocation
 import Combine
 
-protocol LocationServiceProtocol {
+protocol GeoLocationServiceProtocol {
     var currentLocationPublisher: AnyPublisher<LocationInfo?, Never> { get }
     func requestLocation()
 }
 
-final class LocationService: NSObject, LocationServiceProtocol {
+final class GeoLocationService: NSObject, GeoLocationServiceProtocol {
     var currentLocationPublisher: AnyPublisher<LocationInfo?, Never> {
         currentLocationSubject.eraseToAnyPublisher()
     }
@@ -18,10 +18,10 @@ final class LocationService: NSObject, LocationServiceProtocol {
         self.locationManager = locationManager
         super.init()
         self.locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
     }
     
     func requestLocation() {
-        locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
     
@@ -41,7 +41,7 @@ final class LocationService: NSObject, LocationServiceProtocol {
 
 // MARK: - CLLocationManagerDelegate
 
-extension LocationService: CLLocationManagerDelegate {
+extension GeoLocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         getPlace(for: location) { [weak self] placemark in

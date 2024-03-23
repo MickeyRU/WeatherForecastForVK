@@ -6,20 +6,28 @@ protocol NavigationRouterProtocol {
 
 final class NavigationRouter: NavigationRouterProtocol {
     private let navigationController: UINavigationController
-    private let locationService: LocationServiceProtocol
+    private let geoLocationService: GeoLocationServiceProtocol
+    private let reverseGeocodingService: ReverseGeocodingServiceProtocol
     private let weatherService: WeatherServiceProtocol
+    private let layoutProvider: LayoutProviderProtocol
     
     init(navigationController: UINavigationController,
-         locationService: LocationServiceProtocol = LocationService(),
-         weatherService: WeatherServiceProtocol = WeatherService()) {
+         geoLocationService: GeoLocationServiceProtocol = GeoLocationService(),
+         reverseGeocodingService: ReverseGeocodingServiceProtocol = ReverseGeocodingService(),
+         weatherService: WeatherServiceProtocol = WeatherService(),
+         layoutProvider: LayoutProviderProtocol = LayoutProvider()) {
         self.navigationController = navigationController
-        self.locationService = locationService
+        self.geoLocationService = geoLocationService
+        self.reverseGeocodingService = reverseGeocodingService
         self.weatherService = weatherService
+        self.layoutProvider = layoutProvider
     }
     
     func startNavigation() {
-        let viewModel = SelectedLocationViewModel(locationService: locationService, weatherService: weatherService)
-        let rootViewController = SelectedLocationViewController(router: self, viewModel: viewModel)
+        let viewModel = SelectedLocationViewModel(geoLocationService: geoLocationService,
+                                                  weatherService: weatherService,
+                                                  reverseGeocodingService: reverseGeocodingService)
+        let rootViewController = SelectedLocationViewController(router: self, viewModel: viewModel, layoutProvider: layoutProvider)
         navigationController.pushViewController(rootViewController, animated: false)
     }
 }

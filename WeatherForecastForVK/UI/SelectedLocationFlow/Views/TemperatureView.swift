@@ -70,12 +70,12 @@ final class TemperatureView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateUI(with model: SelectedLocationUIModel) {
+    func configure(with model: TemperatureUIModel) {
         self.locationLabel.text = model.location
         self.temperatureLabel.text = model.temperature
-        self.hTemperatureLabel.text = model.hTemperature
-        self.lTemperatureLabel.text = model.lTemperature
-        self.weatherConditionsLabel.text = model.weatherConditions
+        self.hTemperatureLabel.text = model.highTemperature
+        self.lTemperatureLabel.text = model.lowTemperature
+        self.weatherConditionsLabel.text = model.weatherDescription
     }
     
     private func setupViews() {
