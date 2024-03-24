@@ -6,12 +6,15 @@ final class SelectedLocationViewController: UIViewController {
     private let viewModel: SelectedLocationViewModelProtocol
     private let layoutProvider: LayoutProviderProtocol
     
+    private (set) var loadingView: LoadingView
+    
     private let bgImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .mainBackgroud
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
+    
     private let temperatureView = TemperatureView()
     private let footerView = FooterView()
     
@@ -42,6 +45,7 @@ final class SelectedLocationViewController: UIViewController {
         self.router = router
         self.viewModel = viewModel
         self.layoutProvider = layoutProvider
+        self.loadingView = LoadingView()
         super.init(nibName: nil, bundle: nil)
         setupBindings()
     }
@@ -64,6 +68,7 @@ final class SelectedLocationViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.temperatureView.configure(with: model)
                     self.weatherConditionsCollectionView.reloadData()
+                    self.footerView.isUserInteractionEnabled = true
                 }
             }
             .store(in: &cancellables)
@@ -71,13 +76,40 @@ final class SelectedLocationViewController: UIViewController {
         footerView.userLocationButtonTappedPublisher
             .sink { [weak self] _ in
                 self?.viewModel.requestLocationAndWeather()
+                self?.footerView.isUserInteractionEnabled = false
+            }
+            .store(in: &cancellables)
+        
+        viewModel.viewState
+            .receive(on: RunLoop.main)
+            .sink { [weak self] state in
+                guard let self = self else { return }
+                self.updateUI(for: state)
+            }
+            .store(in: &cancellables)
+        
+        footerView.otherLocationButtonTappedPublisher
+            .sink { [weak self] _ in
+                self?.router.navigateToOtherLocationViewController()
             }
             .store(in: &cancellables)
     }
     
+    private func updateUI(for state: ViewState) {
+        let isDataPresent = state == .dataPresent
+        weatherConditionsCollectionView.isHidden = !isDataPresent
+        temperatureView.isHidden = !isDataPresent
+        loadingView.isHidden = isDataPresent
+        
+        if state == .loading {
+            weatherConditionsCollectionView.isHidden = true
+            temperatureView.isHidden = true
+        }
+    }
+    
     private func setupViews() {
-        [bgImageView, temperatureView, weatherConditionsCollectionView, footerView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-        [bgImageView, temperatureView, weatherConditionsCollectionView, footerView].forEach { view.addSubview($0) }
+        [bgImageView, temperatureView, weatherConditionsCollectionView, footerView, loadingView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        [bgImageView, temperatureView, weatherConditionsCollectionView, footerView, loadingView].forEach { view.addSubview($0) }
         
         NSLayoutConstraint.activate([
             bgImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -98,7 +130,12 @@ final class SelectedLocationViewController: UIViewController {
             weatherConditionsCollectionView.topAnchor.constraint(equalTo: temperatureView.bottomAnchor, constant: 20),
             weatherConditionsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             weatherConditionsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            weatherConditionsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            weatherConditionsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loadingView.topAnchor.constraint(equalTo: view.topAnchor),
         ])
     }
 }

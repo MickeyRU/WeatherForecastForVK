@@ -2,6 +2,8 @@ import Foundation
 import Combine
 
 final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
+    private (set) var viewState = CurrentValueSubject<ViewState, Never>(.loading)
+    
     var numberOfSections: Int {
         return SelectedLocationSections.allCases.count
     }
@@ -11,25 +13,21 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
     }
     
     private let geoLocationService: GeoLocationServiceProtocol
-    private let weatherService: WeatherServiceProtocol
-    private let reverseGeocodingService: ReverseGeocodingServiceProtocol
+    private let weatherDataService: WeatherDataServiceProtocol
+    private var cancellables: Set<AnyCancellable> = []
     
     private let currentWeatherSubject = PassthroughSubject<TemperatureUIModel?, Never>()
     
     private var currentWeatherResponse: WeatherResponse? {
         didSet {
-            updateTemperatureModel(with: currentWeatherResponse)
+            viewState.value = currentWeatherResponse == nil ? .empty : .dataPresent
         }
     }
     
-    private var cancellables: Set<AnyCancellable> = []
-    
-    init(geoLocationService: GeoLocationServiceProtocol,
-         weatherService: WeatherServiceProtocol,
-         reverseGeocodingService: ReverseGeocodingServiceProtocol) {
+    init(weatherDataService: WeatherDataServiceProtocol,
+         geoLocationService: GeoLocationServiceProtocol) {
+        self.weatherDataService = weatherDataService
         self.geoLocationService = geoLocationService
-        self.weatherService = weatherService
-        self.reverseGeocodingService = reverseGeocodingService
         requestLocationAndWeather()
         setupBindings()
     }
@@ -53,11 +51,12 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
     func weatherModelForIndexPath(_ indexPath: IndexPath) -> DayWeatherUIModel? {
         guard indexPath.section == SelectedLocationSections.weeklyForecast.rawValue,
               indexPath.row < currentWeatherResponse?.daily.count ?? 0,
-              let dailyWeatherResponse = currentWeatherResponse?.daily[indexPath.row]
+              let dailyWeatherResponse = currentWeatherResponse?.daily[indexPath.row],
+              let timezone = currentWeatherResponse?.timezone
         else {
             return nil
         }
-        return DayWeatherUIModel(from: dailyWeatherResponse, timeZone: currentWeatherResponse!.timezone)
+        return DayWeatherUIModel(from: dailyWeatherResponse, timeZone: timezone)
     }
     
     func modelForIndexPath(_ indexPath: IndexPath) -> Any? {
@@ -106,37 +105,34 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
     }
     
     private func setupBindings() {
+        weatherDataService.weatherResponsePublisher
+            .sink { [weak self] response in
+                self?.currentWeatherResponse = response
+            }
+            .store(in: &cancellables)
+        
+        weatherDataService.weatherLocationPublisher
+            .sink { [weak self] location in
+                guard let self = self,
+                      let location = location,
+                      let weatherResponse = currentWeatherResponse
+                else { return }
+                self.updateTemperatureModel(with: weatherResponse, location: location)
+            }
+            .store(in: &cancellables)
+        
         geoLocationService.currentLocationPublisher
             .sink { [weak self] selectedLocation in
                 guard let self = self,
                       let selectedLocation = selectedLocation
                 else { return }
-                
-                weatherService.fetchCurrentWeather(latitude: selectedLocation.latitude, longitude: selectedLocation.longitude) { result in
-                    switch result {
-                    case .success(let weatherResponse):
-                        self.currentWeatherResponse = weatherResponse
-                    case .failure(let error):
-                        ErrorHandler.handle(error: .networkError(error.localizedDescription))
-                    }
-                }
+                weatherDataService.updateWeather(location: selectedLocation)
             }
             .store(in: &cancellables)
     }
     
-    
-    private func updateTemperatureModel(with weatherResponse: WeatherResponse?) {
-        guard let weatherResponse = weatherResponse else { return }
-        
-        reverseGeocodingService.getPlaceName(latitude: Double(weatherResponse.lat),
-                                             longitude: Double(weatherResponse.lon)) { [weak self] placeName in
-            guard
-                let self = self,
-                let placeName = placeName
-            else { return }
-            
-            let temperatureModel = TemperatureUIModel(location: placeName, with: weatherResponse)
-            self.currentWeatherSubject.send(temperatureModel)
-        }
+    private func updateTemperatureModel(with weatherResponse: WeatherResponse, location: LocationInfo) {
+        let temperatureModel = TemperatureUIModel(location: location.placeName, with: weatherResponse)
+        self.currentWeatherSubject.send(temperatureModel)
     }
 }

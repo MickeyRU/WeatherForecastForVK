@@ -1,6 +1,8 @@
 import UIKit
 
 final class FeelsLikeCell: UICollectionViewCell, ConfigurableCell {
+    static let reuseIdentifier = "FeelsLikeCell"
+
     private let headerView = CellHeaderView()
     
     private let temperatureLabel: UILabel = {
@@ -10,10 +12,6 @@ final class FeelsLikeCell: UICollectionViewCell, ConfigurableCell {
         label.textAlignment = .center
         return label
     }()
-    
-    static var reuseIdentifier: String {
-        return "FeelsLikeCell"
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -3,6 +3,7 @@ import Combine
 
 final class FooterView: UIView {
     private (set) var userLocationButtonTappedPublisher = PassthroughSubject<Void, Never>()
+    private (set) var otherLocationButtonTappedPublisher = PassthroughSubject<Void, Never>()
     
     private let bgImageView: UIImageView = {
         let imageView = UIImageView()
@@ -43,7 +44,7 @@ final class FooterView: UIView {
     
     @objc
     private func otherLocationButtonTapped() {
-        print("otherLocationButtonTapped")
+        otherLocationButtonTappedPublisher.send()
     }
     
     private func setupViews() {

@@ -17,7 +17,7 @@ extension String {
         let date = Date(timeIntervalSince1970: unixTime)
         let calendar = Calendar.current
         if let timeZone = TimeZone(identifier: timeZoneIdentifier) {
-            var components = calendar.dateComponents(in: timeZone, from: date)
+            let components = calendar.dateComponents(in: timeZone, from: date)
             if let hour = components.hour, let minute = components.minute {
                 return String(format: "%02d:%02d", hour, minute)
             }

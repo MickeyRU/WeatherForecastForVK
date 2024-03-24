@@ -12,6 +12,8 @@ final class WeatherService: WeatherServiceProtocol {
     func fetchCurrentWeather(latitude: Double, longitude: Double, completion: @escaping (Result<WeatherResponse, Error>) -> Void) {
         let urlString = "\(baseUrlString)?lat=\(latitude)&lon=\(longitude)&units=metric&lang=ru&exclude=minutely,hourly,alerts&appid=\(apiKey)"
      
+        print("latitude: \(latitude), longitude: \(longitude)")
+        
         guard let url = URL(string: urlString) else {
             completion(.failure(URLError(.badURL)))
             return
