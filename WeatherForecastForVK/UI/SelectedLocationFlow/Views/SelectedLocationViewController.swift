@@ -21,7 +21,7 @@ final class SelectedLocationViewController: UIViewController {
         let layout = layoutProvider.createSelectedLocationLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = .collectionViewBG.withAlphaComponent(0.7)
+        collectionView.backgroundColor = .collectionViewBG.withAlphaComponent(0.8)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.layer.cornerRadius = 44
@@ -31,6 +31,8 @@ final class SelectedLocationViewController: UIViewController {
         collectionView.register(DayWeatherCell.self, forCellWithReuseIdentifier: DayWeatherCell.reuseIdentifier)
         collectionView.register(FeelsLikeCell.self, forCellWithReuseIdentifier: FeelsLikeCell.reuseIdentifier)
         collectionView.register(SunInfoCell.self, forCellWithReuseIdentifier: SunInfoCell.reuseIdentifier)
+        collectionView.register(HumidityCell.self, forCellWithReuseIdentifier: HumidityCell.reuseIdentifier)
+        collectionView.register(WindCell.self, forCellWithReuseIdentifier: WindCell.reuseIdentifier)
         return collectionView
     }()
     
@@ -148,16 +150,16 @@ extension SelectedLocationViewController: UICollectionViewDataSource {
                     return cell
                 }
             case 2:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SunInfoCell.reuseIdentifier, for: indexPath)
-                if let cell = cell as? SunInfoCell,
-                   let model = viewModel.modelForIndexPath(indexPath) as? SunInfoUIModel {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HumidityCell.reuseIdentifier, for: indexPath)
+                if let cell = cell as? HumidityCell,
+                   let model = viewModel.modelForIndexPath(indexPath) as? HumidityUIModel {
                     cell.configure(with: model)
                     return cell
                 }
             case 3:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SunInfoCell.reuseIdentifier, for: indexPath)
-                if let cell = cell as? SunInfoCell,
-                   let model = viewModel.modelForIndexPath(indexPath) as? SunInfoUIModel {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WindCell.reuseIdentifier, for: indexPath)
+                if let cell = cell as? WindCell,
+                   let model = viewModel.modelForIndexPath(indexPath) as? WindUIModel {
                     cell.configure(with: model)
                     return cell
                 }

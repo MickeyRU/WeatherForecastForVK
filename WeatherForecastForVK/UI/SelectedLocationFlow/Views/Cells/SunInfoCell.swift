@@ -9,6 +9,7 @@ final class SunInfoCell: UICollectionViewCell, ConfigurableCell {
         let label = UILabel()
         label.font = AppFonts.regular34
         label.textColor = .primaryWhiteBlack
+        label.textAlignment = .center
         return label
     }()
     
@@ -16,6 +17,7 @@ final class SunInfoCell: UICollectionViewCell, ConfigurableCell {
         let label = UILabel()
         label.font = AppFonts.regular12
         label.textColor = .primaryWhiteBlack
+        label.textAlignment = .center
         return label
     }()
     

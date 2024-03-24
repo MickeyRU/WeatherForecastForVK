@@ -28,7 +28,7 @@ final class LayoutProvider: LayoutProviderProtocol {
         section.interGroupSpacing = 20
         section.orthogonalScrollingBehavior = .continuous
         section.contentInsets.bottom = 15
-        section.contentInsets = NSDirectionalEdgeInsets(top: 40, leading: 20, bottom: 0, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 35, leading: 20, bottom: 0, trailing: 20)
         return section
     }
     
@@ -39,7 +39,7 @@ final class LayoutProvider: LayoutProviderProtocol {
         group.interItemSpacing = .fixed(10)
 
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 20, bottom: 0, trailing: 15)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 15)
         section.interGroupSpacing = 10
         return section
     }

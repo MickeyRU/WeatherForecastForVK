@@ -45,7 +45,7 @@ protocol WeatherUIModelProtocol {
 struct FeelsLikeUIModel: WeatherUIModelProtocol {
     let iconType: CellIconType
     let temperature: String
-
+    
     
     init(iconType: CellIconType = .feelsLike, weatherResponse: WeatherResponse) {
         self.iconType = iconType
@@ -60,7 +60,7 @@ struct SunInfoUIModel: WeatherUIModelProtocol {
     
     init(iconType: CellIconType = .sunInfo, weatherResponse: WeatherResponse) {
         self.iconType = iconType
-        self.sunrise = String.convertUnixTimeToLocaleTimeString(unixTime: Double(weatherResponse.current.sunrise), 
+        self.sunrise = String.convertUnixTimeToLocaleTimeString(unixTime: Double(weatherResponse.current.sunrise),
                                                                 timeZoneIdentifier: weatherResponse.timezone)
         let sunsetString = NSLocalizedString("sunset", tableName: "Localizable", comment: "")
         let sunsetValue = String.convertUnixTimeToLocaleTimeString(unixTime: Double(weatherResponse.current.sunset),
@@ -71,16 +71,45 @@ struct SunInfoUIModel: WeatherUIModelProtocol {
 
 struct HumidityUIModel: WeatherUIModelProtocol {
     let iconType: CellIconType
+    let humidity: String
     
     init(iconType: CellIconType = .humidity, weatherResponse: WeatherResponse) {
         self.iconType = iconType
+        self.humidity = "\(weatherResponse.current.humidity)%"
     }
 }
 
 struct WindUIModel: WeatherUIModelProtocol {
     let iconType: CellIconType
+    let windSpeed: String
+    let windDirection: String
     
     init(iconType: CellIconType = .wind, weatherResponse: WeatherResponse) {
         self.iconType = iconType
+        self.windSpeed = "\(weatherResponse.current.windSpeed) м/с"
+        self.windDirection = WindUIModel.convertDegreesToDirectionImageName(degrees: weatherResponse.current.windDeg)
+    }
+    
+    private static func convertDegreesToDirectionImageName(degrees: Int) -> String {
+        switch (degrees + 22) % 360 / 45 {
+        case 0:
+            return "uDir"
+        case 1:
+            return "uwDir"
+        case 2:
+            return "zDir"
+        case 3:
+            return "swDir"
+        case 4:
+            return "sDir"
+        case 5:
+            return "szDir"
+        case 6:
+            return "wDir"
+        case 7:
+            return "uzDir"
+        default:
+            return "sDir"
+        }
     }
 }

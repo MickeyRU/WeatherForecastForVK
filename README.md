@@ -29,6 +29,7 @@
 
 - **Дизайн**:   
    - Идея UI Design позаимствована https://www.figma.com/community/file/1100826294536456295/weather-app-ui-design
+   - Дополнительные UI элементы https://www.figma.com/community/file/1080107605244615226/140-hand-drawn-arrow-vector-icon-set-free-community
 
 # 🛠 **Технологии**:
 

@@ -69,9 +69,9 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
         case 1:
             return getSunInfoModel()
         case 2:
-            return getSunInfoModel()
+            return getHumidityModel()
         case 3:
-            return getSunInfoModel()
+            return getWindModel()
         default:
             return nil
         }
@@ -91,6 +91,19 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
         return SunInfoUIModel(weatherResponse: weatherResponse)
     }
     
+    private func getHumidityModel() -> HumidityUIModel? {
+        guard let weatherResponse = currentWeatherResponse else {
+            return nil
+        }
+        return HumidityUIModel(weatherResponse: weatherResponse)
+    }
+    
+    private func getWindModel() -> WindUIModel? {
+        guard let weatherResponse = currentWeatherResponse else {
+            return nil
+        }
+        return WindUIModel(weatherResponse: weatherResponse)
+    }
     
     private func setupBindings() {
         geoLocationService.currentLocationPublisher
