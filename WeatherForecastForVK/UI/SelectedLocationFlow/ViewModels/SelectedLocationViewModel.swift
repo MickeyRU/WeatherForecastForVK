@@ -24,7 +24,6 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    
     init(geoLocationService: GeoLocationServiceProtocol,
          weatherService: WeatherServiceProtocol,
          reverseGeocodingService: ReverseGeocodingServiceProtocol) {
@@ -39,18 +38,15 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
         geoLocationService.requestLocation()
     }
     
-    
     func numberOfItems(inSection section: SelectedLocationSections) -> Int {
-        guard 
-            section == .weeklyForecast,
-            let weatherResponse = currentWeatherResponse else {
+        guard let weatherResponse = currentWeatherResponse else {
             return 0
         }
         switch section {
         case .weeklyForecast:
             return weatherResponse.daily.count
         case .selectedDayInfo:
-            return 7
+            return CellIconType.allCases.count
         }
     }
     
@@ -63,6 +59,38 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
         }
         return DayWeatherUIModel(from: dailyWeatherResponse, timeZone: currentWeatherResponse!.timezone)
     }
+    
+    func modelForIndexPath(_ indexPath: IndexPath) -> Any? {
+        guard indexPath.section == SelectedLocationSections.selectedDayInfo.rawValue else { return nil }
+        
+        switch indexPath.row {
+        case 0:
+            return getFeelsLikeModel()
+        case 1:
+            return getSunInfoModel()
+        case 2:
+            return getSunInfoModel()
+        case 3:
+            return getSunInfoModel()
+        default:
+            return nil
+        }
+    }
+    
+    private func getFeelsLikeModel() -> FeelsLikeUIModel? {
+        guard let weatherResponse = currentWeatherResponse else {
+            return nil
+        }
+        return FeelsLikeUIModel(weatherResponse: weatherResponse)
+    }
+    
+    private func getSunInfoModel() -> SunInfoUIModel? {
+        guard let weatherResponse = currentWeatherResponse else {
+            return nil
+        }
+        return SunInfoUIModel(weatherResponse: weatherResponse)
+    }
+    
     
     private func setupBindings() {
         geoLocationService.currentLocationPublisher
@@ -89,7 +117,7 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
         
         reverseGeocodingService.getPlaceName(latitude: Double(weatherResponse.lat),
                                              longitude: Double(weatherResponse.lon)) { [weak self] placeName in
-            guard 
+            guard
                 let self = self,
                 let placeName = placeName
             else { return }

@@ -21,7 +21,7 @@ final class SelectedLocationViewController: UIViewController {
         let layout = layoutProvider.createSelectedLocationLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = .collectionViewBG.withAlphaComponent(0.5)
+        collectionView.backgroundColor = .collectionViewBG.withAlphaComponent(0.7)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.layer.cornerRadius = 44
@@ -30,6 +30,7 @@ final class SelectedLocationViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 88, right: 0)
         collectionView.register(DayWeatherCell.self, forCellWithReuseIdentifier: DayWeatherCell.reuseIdentifier)
         collectionView.register(FeelsLikeCell.self, forCellWithReuseIdentifier: FeelsLikeCell.reuseIdentifier)
+        collectionView.register(SunInfoCell.self, forCellWithReuseIdentifier: SunInfoCell.reuseIdentifier)
         return collectionView
     }()
     
@@ -121,23 +122,54 @@ extension SelectedLocationViewController: UICollectionViewDataSource {
         
         switch section {
         case .weeklyForecast:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayWeatherCell.reuseIdentifier, for: indexPath) as? DayWeatherCell,
-                  let model = viewModel.weatherModelForIndexPath(indexPath) else {
+            guard
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayWeatherCell.reuseIdentifier, for: indexPath) as? DayWeatherCell,
+                let model = viewModel.weatherModelForIndexPath(indexPath)
+            else {
                 return UICollectionViewCell()
             }
             cell.configure(with: model)
             return cell
             
         case .selectedDayInfo:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeelsLikeCell.reuseIdentifier, for: indexPath) as? FeelsLikeCell else {
-                return UICollectionViewCell()
+            switch indexPath.row {
+            case 0:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeelsLikeCell.reuseIdentifier, for: indexPath)
+                if let cell = cell as? FeelsLikeCell,
+                   let model = viewModel.modelForIndexPath(indexPath) as? FeelsLikeUIModel {
+                    cell.configure(with: model)
+                    return cell
+                }
+            case 1:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SunInfoCell.reuseIdentifier, for: indexPath)
+                if let cell = cell as? SunInfoCell,
+                   let model = viewModel.modelForIndexPath(indexPath) as? SunInfoUIModel {
+                    cell.configure(with: model)
+                    return cell
+                }
+            case 2:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SunInfoCell.reuseIdentifier, for: indexPath)
+                if let cell = cell as? SunInfoCell,
+                   let model = viewModel.modelForIndexPath(indexPath) as? SunInfoUIModel {
+                    cell.configure(with: model)
+                    return cell
+                }
+            case 3:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SunInfoCell.reuseIdentifier, for: indexPath)
+                if let cell = cell as? SunInfoCell,
+                   let model = viewModel.modelForIndexPath(indexPath) as? SunInfoUIModel {
+                    cell.configure(with: model)
+                    return cell
+                }
+            default:
+                break
             }
-            return cell
         }
+        return UICollectionViewCell()
+        
     }
 }
-
-
-// MARK: - UICollectionViewDelegate
-
-extension SelectedLocationViewController: UICollectionViewDelegate {}
+    
+    // MARK: - UICollectionViewDelegate
+    
+    extension SelectedLocationViewController: UICollectionViewDelegate {}

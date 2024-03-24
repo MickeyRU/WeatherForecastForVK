@@ -29,7 +29,7 @@ final class TemperatureView: UIView {
         let label = UILabel()
         label.font = AppFonts.semibold20
         label.textColor = .primaryWhiteBlack
-        label.textAlignment = .center
+        label.textAlignment = .right
         return label
     }()
     
@@ -37,28 +37,8 @@ final class TemperatureView: UIView {
         let label = UILabel()
         label.font = AppFonts.semibold20
         label.textColor = .primaryWhiteBlack
-        label.textAlignment = .center
+        label.textAlignment = .left
         return label
-    }()
-    
-    private lazy var temperatureStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillProportionally
-        stackView.alignment = .center
-        return stackView
-    }()
-    
-    private lazy var weatherConditionsStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        return stackView
-    }()
-    
-    private lazy var verticalStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        return stackView
     }()
     
     override init(frame: CGRect) {
@@ -79,21 +59,31 @@ final class TemperatureView: UIView {
     }
     
     private func setupViews() {
-        [hTemperatureLabel, lTemperatureLabel].forEach { temperatureStackView.addArrangedSubview($0) }
-        [weatherConditionsLabel, temperatureStackView].forEach { weatherConditionsStackView.addArrangedSubview($0) }
-        [locationLabel, temperatureLabel, weatherConditionsStackView].forEach { verticalStackView.addArrangedSubview($0) }
-        
-        addSubview(verticalStackView)
-        verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+        [locationLabel, temperatureLabel, weatherConditionsLabel, hTemperatureLabel, lTemperatureLabel].forEach { addSubview($0) }
+        [locationLabel, temperatureLabel, weatherConditionsLabel, hTemperatureLabel, lTemperatureLabel].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         
         let sidePadding: CGFloat = 20 // Отступ с боков
         
         NSLayoutConstraint.activate([
-               verticalStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-               verticalStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-               verticalStackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: sidePadding),
-               verticalStackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -sidePadding),
-               verticalStackView.widthAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.width - 2 * sidePadding)
-           ])
+            locationLabel.topAnchor.constraint(equalTo: topAnchor),
+            locationLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sidePadding),
+            locationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sidePadding),
+            
+            temperatureLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor),
+            temperatureLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sidePadding),
+            temperatureLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sidePadding),
+            
+            weatherConditionsLabel.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor),
+            weatherConditionsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sidePadding),
+            weatherConditionsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sidePadding),
+            
+            hTemperatureLabel.topAnchor.constraint(equalTo: weatherConditionsLabel.bottomAnchor),
+            hTemperatureLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sidePadding),
+            hTemperatureLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.40),
+            
+            lTemperatureLabel.topAnchor.constraint(equalTo: weatherConditionsLabel.bottomAnchor),
+            lTemperatureLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sidePadding),
+            lTemperatureLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.40)
+        ])
     }
 }

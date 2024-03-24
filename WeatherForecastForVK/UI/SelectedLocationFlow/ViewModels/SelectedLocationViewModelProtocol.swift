@@ -8,4 +8,6 @@ protocol SelectedLocationViewModelProtocol {
     func requestLocationAndWeather()
     func numberOfItems(inSection section: SelectedLocationSections) -> Int
     func weatherModelForIndexPath(_ indexPath: IndexPath) -> DayWeatherUIModel?
+    
+    func modelForIndexPath(_ indexPath: IndexPath) -> Any?
 }

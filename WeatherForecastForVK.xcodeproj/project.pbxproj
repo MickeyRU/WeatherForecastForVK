@@ -25,11 +25,8 @@
 		BE0CB9012BAC725900A7291F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB9002BAC725800A7291F /* Localizable.xcstrings */; };
 		BE0CB9042BADF40400A7291F /* SunInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9032BADF40400A7291F /* SunInfoCell.swift */; };
 		BE0CB9062BADF43A00A7291F /* FeelsLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9052BADF43A00A7291F /* FeelsLikeCell.swift */; };
-		BE0CB9082BADF4AA00A7291F /* PressureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9072BADF4AA00A7291F /* PressureCell.swift */; };
 		BE0CB90A2BADF4CE00A7291F /* HumidityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9092BADF4CE00A7291F /* HumidityCell.swift */; };
-		BE0CB90C2BADF4FC00A7291F /* UviCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB90B2BADF4FC00A7291F /* UviCell.swift */; };
 		BE0CB90E2BADF51B00A7291F /* WindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB90D2BADF51B00A7291F /* WindCell.swift */; };
-		BE0CB9102BADF55E00A7291F /* VisibilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB90F2BADF55E00A7291F /* VisibilityCell.swift */; };
 		BE0CB9122BADF6EF00A7291F /* LayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9112BADF6EF00A7291F /* LayoutProvider.swift */; };
 		BE0CB9142BAE15D800A7291F /* DayWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9132BAE15D800A7291F /* DayWeatherCell.swift */; };
 		BE0CB9162BAE177F00A7291F /* CollectionViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9152BAE177F00A7291F /* CollectionViewConfiguration.swift */; };
@@ -38,6 +35,8 @@
 		BE0CB9282BAF215200A7291F /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9272BAF215200A7291F /* String + extensions.swift */; };
 		BE0CB92A2BAF44B800A7291F /* WeatherIconMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9292BAF44B800A7291F /* WeatherIconMapping.swift */; };
 		BE0CB92E2BAF6B0300A7291F /* ReverseGeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB92D2BAF6B0300A7291F /* ReverseGeocodingService.swift */; };
+		BE0CB9302BB045E500A7291F /* CellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB92F2BB045E500A7291F /* CellHeaderView.swift */; };
+		BE0CB9322BB04B1000A7291F /* CellIconType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9312BB04B1000A7291F /* CellIconType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,11 +60,8 @@
 		BE0CB9002BAC725800A7291F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BE0CB9032BADF40400A7291F /* SunInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunInfoCell.swift; sourceTree = "<group>"; };
 		BE0CB9052BADF43A00A7291F /* FeelsLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelsLikeCell.swift; sourceTree = "<group>"; };
-		BE0CB9072BADF4AA00A7291F /* PressureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureCell.swift; sourceTree = "<group>"; };
 		BE0CB9092BADF4CE00A7291F /* HumidityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityCell.swift; sourceTree = "<group>"; };
-		BE0CB90B2BADF4FC00A7291F /* UviCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UviCell.swift; sourceTree = "<group>"; };
 		BE0CB90D2BADF51B00A7291F /* WindCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindCell.swift; sourceTree = "<group>"; };
-		BE0CB90F2BADF55E00A7291F /* VisibilityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityCell.swift; sourceTree = "<group>"; };
 		BE0CB9112BADF6EF00A7291F /* LayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProvider.swift; sourceTree = "<group>"; };
 		BE0CB9132BAE15D800A7291F /* DayWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherCell.swift; sourceTree = "<group>"; };
 		BE0CB9152BAE177F00A7291F /* CollectionViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewConfiguration.swift; sourceTree = "<group>"; };
@@ -74,6 +70,8 @@
 		BE0CB9272BAF215200A7291F /* String + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extensions.swift"; sourceTree = "<group>"; };
 		BE0CB9292BAF44B800A7291F /* WeatherIconMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconMapping.swift; sourceTree = "<group>"; };
 		BE0CB92D2BAF6B0300A7291F /* ReverseGeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocodingService.swift; sourceTree = "<group>"; };
+		BE0CB92F2BB045E500A7291F /* CellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeaderView.swift; sourceTree = "<group>"; };
+		BE0CB9312BB04B1000A7291F /* CellIconType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIconType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +203,7 @@
 			children = (
 				BE0CB8E92BAB20BB00A7291F /* AppFonts.swift */,
 				BE0CB9292BAF44B800A7291F /* WeatherIconMapping.swift */,
+				BE0CB92F2BB045E500A7291F /* CellHeaderView.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -248,6 +247,7 @@
 		BE0CB8FB2BAC5EAE00A7291F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE0CB9312BB04B1000A7291F /* CellIconType.swift */,
 				BE0CB8F62BAC5E6D00A7291F /* WeatherModels.swift */,
 				BE0CB8FD2BAC63CF00A7291F /* LocationModels.swift */,
 				BE0CB9152BAE177F00A7291F /* CollectionViewConfiguration.swift */,
@@ -277,11 +277,8 @@
 				BE0CB9132BAE15D800A7291F /* DayWeatherCell.swift */,
 				BE0CB9052BADF43A00A7291F /* FeelsLikeCell.swift */,
 				BE0CB9032BADF40400A7291F /* SunInfoCell.swift */,
-				BE0CB9072BADF4AA00A7291F /* PressureCell.swift */,
 				BE0CB9092BADF4CE00A7291F /* HumidityCell.swift */,
-				BE0CB90B2BADF4FC00A7291F /* UviCell.swift */,
 				BE0CB90D2BADF51B00A7291F /* WindCell.swift */,
-				BE0CB90F2BADF55E00A7291F /* VisibilityCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -358,13 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0CB9302BB045E500A7291F /* CellHeaderView.swift in Sources */,
 				BE0CB9282BAF215200A7291F /* String + extensions.swift in Sources */,
 				BE0CB8EF2BAC526200A7291F /* WeatherService.swift in Sources */,
-				BE0CB90C2BADF4FC00A7291F /* UviCell.swift in Sources */,
 				BE0CB91A2BAE209500A7291F /* SelectedLocationViewModelProtocol.swift in Sources */,
 				BE0CB92E2BAF6B0300A7291F /* ReverseGeocodingService.swift in Sources */,
 				BE0CB8EA2BAB20BB00A7291F /* AppFonts.swift in Sources */,
 				BE0CB8F72BAC5E6D00A7291F /* WeatherModels.swift in Sources */,
+				BE0CB9322BB04B1000A7291F /* CellIconType.swift in Sources */,
 				BE0CB9122BADF6EF00A7291F /* LayoutProvider.swift in Sources */,
 				BE0CB8E52BAB0F2800A7291F /* TemperatureView.swift in Sources */,
 				BE0CB90E2BADF51B00A7291F /* WindCell.swift in Sources */,
@@ -377,11 +375,9 @@
 				BE0CB9042BADF40400A7291F /* SunInfoCell.swift in Sources */,
 				BE0CB9062BADF43A00A7291F /* FeelsLikeCell.swift in Sources */,
 				BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */,
-				BE0CB9082BADF4AA00A7291F /* PressureCell.swift in Sources */,
 				BE0CB9162BAE177F00A7291F /* CollectionViewConfiguration.swift in Sources */,
 				BE0CB9142BAE15D800A7291F /* DayWeatherCell.swift in Sources */,
 				BE0CB8E32BAB018900A7291F /* FooterView.swift in Sources */,
-				BE0CB9102BADF55E00A7291F /* VisibilityCell.swift in Sources */,
 				BE0CB8DB2BAAF85F00A7291F /* NavigationRouter.swift in Sources */,
 				BE0CB90A2BADF4CE00A7291F /* HumidityCell.swift in Sources */,
 				BE0CB8ED2BAC4EC600A7291F /* GeoLocationService.swift in Sources */,

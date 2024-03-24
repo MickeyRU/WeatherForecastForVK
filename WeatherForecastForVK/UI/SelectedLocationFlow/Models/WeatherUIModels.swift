@@ -35,6 +35,52 @@ struct TemperatureUIModel {
     }
 }
 
-struct FeelsLikeUIModel {
-    let n = 10
+
+protocol WeatherUIModelProtocol {
+    var iconType: CellIconType { get }
+    init(iconType: CellIconType, weatherResponse: WeatherResponse)
+}
+
+
+struct FeelsLikeUIModel: WeatherUIModelProtocol {
+    let iconType: CellIconType
+    let temperature: String
+
+    
+    init(iconType: CellIconType = .feelsLike, weatherResponse: WeatherResponse) {
+        self.iconType = iconType
+        self.temperature = "\(Int(round(weatherResponse.current.feelsLike)))°"
+    }
+}
+
+struct SunInfoUIModel: WeatherUIModelProtocol {
+    let iconType: CellIconType
+    let sunrise: String
+    let sunset: String
+    
+    init(iconType: CellIconType = .sunInfo, weatherResponse: WeatherResponse) {
+        self.iconType = iconType
+        self.sunrise = String.convertUnixTimeToLocaleTimeString(unixTime: Double(weatherResponse.current.sunrise), 
+                                                                timeZoneIdentifier: weatherResponse.timezone)
+        let sunsetString = NSLocalizedString("sunset", tableName: "Localizable", comment: "")
+        let sunsetValue = String.convertUnixTimeToLocaleTimeString(unixTime: Double(weatherResponse.current.sunset),
+                                                                   timeZoneIdentifier: weatherResponse.timezone)
+        self.sunset = sunsetString + ": " + sunsetValue
+    }
+}
+
+struct HumidityUIModel: WeatherUIModelProtocol {
+    let iconType: CellIconType
+    
+    init(iconType: CellIconType = .humidity, weatherResponse: WeatherResponse) {
+        self.iconType = iconType
+    }
+}
+
+struct WindUIModel: WeatherUIModelProtocol {
+    let iconType: CellIconType
+    
+    init(iconType: CellIconType = .wind, weatherResponse: WeatherResponse) {
+        self.iconType = iconType
+    }
 }

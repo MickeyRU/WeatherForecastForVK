@@ -1,9 +1,8 @@
 import Foundation
 
 protocol ConfigurableCell {
-    associatedtype Model
     static var reuseIdentifier: String { get }
-    func configure(with model: Model)
+    func configure(with model: WeatherUIModelProtocol)
 }
 
 enum SelectedLocationSections: Int, CaseIterable {

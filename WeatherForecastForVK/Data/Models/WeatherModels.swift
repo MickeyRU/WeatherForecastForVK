@@ -13,9 +13,7 @@ struct CurrentWeatherResponse: Codable {
     let sunset: Int
     let temp: Float
     let feelsLike: Float
-    let pressure: Int
     let humidity: Int
-    let uvi: Float
     let windSpeed: Float
     let weather: [WeatherConditionResponse]
 }

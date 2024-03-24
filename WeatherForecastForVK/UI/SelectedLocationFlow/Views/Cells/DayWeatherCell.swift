@@ -1,11 +1,7 @@
 import UIKit
 
-final class DayWeatherCell: UICollectionViewCell, ConfigurableCell {
-    typealias Model = DayWeatherUIModel
-    
-    static var reuseIdentifier: String {
-        return "DayWeatherCell"
-    }
+final class DayWeatherCell: UICollectionViewCell {
+    static let reuseIdentifier = "DayWeatherCell"
     
     private let dayNameLabel: UILabel = {
         let label = UILabel()
@@ -50,22 +46,22 @@ final class DayWeatherCell: UICollectionViewCell, ConfigurableCell {
         layer.borderWidth = 1
         layer.borderColor = UIColor.brd.cgColor
         
-        [dayNameLabel, dayTempLabel, weatherImageView].forEach { addSubview($0) }
+        [dayNameLabel, dayTempLabel, weatherImageView].forEach { contentView.addSubview($0) }
         [dayNameLabel, dayTempLabel, weatherImageView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         
         NSLayoutConstraint.activate([
-            dayNameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            dayNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            dayNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            dayNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            dayNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            dayNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
             
             weatherImageView.topAnchor.constraint(equalTo: dayNameLabel.bottomAnchor, constant: 16),
-            weatherImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            weatherImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             weatherImageView.widthAnchor.constraint(equalToConstant: 35),
             weatherImageView.heightAnchor.constraint(equalToConstant: 35),
             
-            dayTempLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
-            dayTempLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            dayTempLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            dayTempLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+            dayTempLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            dayTempLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
         ])
     }
 }
