@@ -29,7 +29,10 @@ final class WindCell: UICollectionViewCell, ConfigurableCell {
     }
     
     func configure(with model: WeatherUIModelProtocol) {
-        guard let model = model as? WindUIModel else { return }
+        guard let model = model as? WindUIModel else {
+            ErrorHandler.handle(error: .customError("Ошибка получения модели WindUIModel"))
+            return
+        }
         self.windSpeedLabel.text = model.windSpeed
         self.windDirectionImageView.image = UIImage(named: model.windDirection)
     

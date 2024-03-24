@@ -11,7 +11,7 @@ final class ReverseGeocodingService: ReverseGeocodingServiceProtocol {
         
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             guard error == nil else {
-                print("Ошибка обратного геокодирования: \(error!.localizedDescription)")
+                ErrorHandler.handle(error: .customError("Ошибка обратного геокодирования: \(error!.localizedDescription)"))
                 completion(nil)
                 return
             }

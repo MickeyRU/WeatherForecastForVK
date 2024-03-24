@@ -86,7 +86,8 @@ struct WindUIModel: WeatherUIModelProtocol {
     
     init(iconType: CellIconType = .wind, weatherResponse: WeatherResponse) {
         self.iconType = iconType
-        self.windSpeed = "\(weatherResponse.current.windSpeed) м/с"
+        let ms = NSLocalizedString("m/s", tableName: "Localizable", comment: "")
+        self.windSpeed = "\(weatherResponse.current.windSpeed) " + ms
         self.windDirection = WindUIModel.convertDegreesToDirectionImageName(degrees: weatherResponse.current.windDeg)
     }
     

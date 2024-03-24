@@ -69,7 +69,7 @@ final class SelectedLocationViewController: UIViewController {
             .store(in: &cancellables)
         
         footerView.userLocationButtonTappedPublisher
-            .sink {[weak self] _ in
+            .sink { [weak self] _ in
                 self?.viewModel.requestLocationAndWeather()
             }
             .store(in: &cancellables)
@@ -119,6 +119,7 @@ extension SelectedLocationViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let section = SelectedLocationSections(rawValue: indexPath.section) else {
+            ErrorHandler.handle(error: .customError("Ошибка получения секции"))
             return UICollectionViewCell()
         }
         
@@ -128,6 +129,7 @@ extension SelectedLocationViewController: UICollectionViewDataSource {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayWeatherCell.reuseIdentifier, for: indexPath) as? DayWeatherCell,
                 let model = viewModel.weatherModelForIndexPath(indexPath)
             else {
+                ErrorHandler.handle(error: .customError("Ошибка получения ячейки или модели для DayWeatherCell"))
                 return UICollectionViewCell()
             }
             cell.configure(with: model)
@@ -171,7 +173,7 @@ extension SelectedLocationViewController: UICollectionViewDataSource {
         
     }
 }
-    
-    // MARK: - UICollectionViewDelegate
-    
-    extension SelectedLocationViewController: UICollectionViewDelegate {}
+
+// MARK: - UICollectionViewDelegate
+
+extension SelectedLocationViewController: UICollectionViewDelegate {}

@@ -33,6 +33,22 @@
         }
       }
     },
+    "m/s" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "m/s"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "м/с"
+          }
+        }
+      }
+    },
     "Sunrise" : {
       "localizations" : {
         "en" : {
@@ -81,23 +97,6 @@
         }
       }
     },
-    "wind" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "wind"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ветер"
-          }
-        }
-      }
-    },
     "Wind" : {
       "localizations" : {
         "en" : {
@@ -110,23 +109,6 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "ВЕТЕР"
-          }
-        }
-      }
-    },
-    "windDirection" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "direction"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Направление"
           }
         }
       }

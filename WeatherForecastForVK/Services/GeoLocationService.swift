@@ -30,7 +30,7 @@ final class GeoLocationService: NSObject, GeoLocationServiceProtocol {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
             guard error == nil else {
-                print("Ошибка обратного геокодирования: \(error!.localizedDescription)")
+                ErrorHandler.handle(error: .customError("Ошибка обратного геокодирования: \(error!.localizedDescription)"))
                 completion(nil)
                 return
             }
@@ -55,7 +55,7 @@ extension GeoLocationService: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Ошибка получения геолокации: \(error.localizedDescription)")
+        ErrorHandler.handle(error: .networkError("Ошибка обратного геокодирования: \(error.localizedDescription)"))
         currentLocationSubject.send(nil)
     }
 }

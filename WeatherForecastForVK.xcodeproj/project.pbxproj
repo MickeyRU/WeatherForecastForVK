@@ -37,6 +37,9 @@
 		BE0CB92E2BAF6B0300A7291F /* ReverseGeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB92D2BAF6B0300A7291F /* ReverseGeocodingService.swift */; };
 		BE0CB9302BB045E500A7291F /* CellHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB92F2BB045E500A7291F /* CellHeaderView.swift */; };
 		BE0CB9322BB04B1000A7291F /* CellIconType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9312BB04B1000A7291F /* CellIconType.swift */; };
+		BE0CB9342BB0A2DA00A7291F /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9332BB0A2D900A7291F /* ErrorHandler.swift */; };
+		BE0CB9362BB0A34F00A7291F /* ErrorHandler.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BE0CB9352BB0A34F00A7291F /* ErrorHandler.xcstrings */; };
+		BE0CB9382BB0A42700A7291F /* UIViewController + exxtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9372BB0A42700A7291F /* UIViewController + exxtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,9 @@
 		BE0CB92D2BAF6B0300A7291F /* ReverseGeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocodingService.swift; sourceTree = "<group>"; };
 		BE0CB92F2BB045E500A7291F /* CellHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeaderView.swift; sourceTree = "<group>"; };
 		BE0CB9312BB04B1000A7291F /* CellIconType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIconType.swift; sourceTree = "<group>"; };
+		BE0CB9332BB0A2D900A7291F /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		BE0CB9352BB0A34F00A7291F /* ErrorHandler.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = ErrorHandler.xcstrings; sourceTree = "<group>"; };
+		BE0CB9372BB0A42700A7291F /* UIViewController + exxtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + exxtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +221,7 @@
 				BE0CB8EC2BAC4EC600A7291F /* GeoLocationService.swift */,
 				BE0CB8EE2BAC526200A7291F /* WeatherService.swift */,
 				BE0CB9112BADF6EF00A7291F /* LayoutProvider.swift */,
+				BE0CB9332BB0A2D900A7291F /* ErrorHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0CB9272BAF215200A7291F /* String + extensions.swift */,
+				BE0CB9372BB0A42700A7291F /* UIViewController + exxtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				BE0CB9002BAC725800A7291F /* Localizable.xcstrings */,
+				BE0CB9352BB0A34F00A7291F /* ErrorHandler.xcstrings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0CB8C42BA9C88400A7291F /* Assets.xcassets in Resources */,
+				BE0CB9362BB0A34F00A7291F /* ErrorHandler.xcstrings in Resources */,
 				BE0CB8C72BA9C88400A7291F /* Base in Resources */,
 				BE0CB9012BAC725900A7291F /* Localizable.xcstrings in Resources */,
 			);
@@ -356,9 +366,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0CB9302BB045E500A7291F /* CellHeaderView.swift in Sources */,
+				BE0CB9342BB0A2DA00A7291F /* ErrorHandler.swift in Sources */,
 				BE0CB9282BAF215200A7291F /* String + extensions.swift in Sources */,
 				BE0CB8EF2BAC526200A7291F /* WeatherService.swift in Sources */,
 				BE0CB91A2BAE209500A7291F /* SelectedLocationViewModelProtocol.swift in Sources */,
+				BE0CB9382BB0A42700A7291F /* UIViewController + exxtensions.swift in Sources */,
 				BE0CB92E2BAF6B0300A7291F /* ReverseGeocodingService.swift in Sources */,
 				BE0CB8EA2BAB20BB00A7291F /* AppFonts.swift in Sources */,
 				BE0CB8F72BAC5E6D00A7291F /* WeatherModels.swift in Sources */,

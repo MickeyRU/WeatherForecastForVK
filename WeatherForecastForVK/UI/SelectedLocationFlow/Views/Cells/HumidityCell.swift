@@ -23,8 +23,10 @@ final class HumidityCell: UICollectionViewCell, ConfigurableCell {
     }
     
     func configure(with model: WeatherUIModelProtocol) {
-        guard let model = model as? HumidityUIModel else { return }
-        
+        guard let model = model as? HumidityUIModel else {
+            ErrorHandler.handle(error: .customError("Ошибка получения модели HumidityUIModel"))
+            return
+        }
         self.humidityLabel.text = model.humidity
         
         let title = NSLocalizedString("Humidity", tableName: "Localizable", comment: "")

@@ -25,7 +25,10 @@ final class FeelsLikeCell: UICollectionViewCell, ConfigurableCell {
     }
     
     func configure(with model: WeatherUIModelProtocol) {
-        guard let model = model as? FeelsLikeUIModel else { return}
+        guard let model = model as? FeelsLikeUIModel else { 
+            ErrorHandler.handle(error: .customError("Ошибка получения модели FeelsLikeUIModel"))
+            return
+        }
         self.temperatureLabel.text = model.temperature
         
         let title = NSLocalizedString("Feels Like", tableName: "Localizable", comment: "")

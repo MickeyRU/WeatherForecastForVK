@@ -31,7 +31,10 @@ final class SunInfoCell: UICollectionViewCell, ConfigurableCell {
     }
     
     func configure(with model: WeatherUIModelProtocol) {
-        guard let model = model as? SunInfoUIModel else { return}
+        guard let model = model as? SunInfoUIModel else {
+            ErrorHandler.handle(error: .customError("Ошибка получения модели SunInfoUIModel"))
+            return
+        }
         self.sunInfoLabel.text = model.sunrise
         self.sunInfo2Label.text = model.sunset
         

@@ -117,7 +117,7 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
                     case .success(let weatherResponse):
                         self.currentWeatherResponse = weatherResponse
                     case .failure(let error):
-                        print("Ошибка получения данных о погоде: \(error.localizedDescription)")
+                        ErrorHandler.handle(error: .networkError(error.localizedDescription))
                     }
                 }
             }
