@@ -56,7 +56,6 @@ final class OtherLocationViewController: UIViewController {
             .sink { [weak self] locations in
                 self?.searchResults = locations
                 self?.cityTableView.reloadData()
-                print("Имя локации: \(String(describing: self?.searchResults.first?.placeName))")
             }
             .store(in: &cancellables)
     }
@@ -140,7 +139,5 @@ extension OtherLocationViewController: UITableViewDelegate {
         let location = searchResults[indexPath.row]
         viewModel.userSelectLocation(location: location)
         router.goBackToSelectetLocationViewController()
-        print(location.placeName)
-        print("latitude: \(location.latitude), longitude: \(location.longitude)")
     }
 }
