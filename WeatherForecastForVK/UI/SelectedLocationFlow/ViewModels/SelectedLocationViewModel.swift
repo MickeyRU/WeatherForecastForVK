@@ -13,7 +13,7 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
     }
     
     private let geoLocationService: GeoLocationServiceProtocol
-    private let weatherDataService: WeatherDataServiceProtocol
+    private let weatherDataService: AppDataServiceProtocol
     private var cancellables: Set<AnyCancellable> = []
     
     private let currentWeatherSubject = PassthroughSubject<TemperatureUIModel?, Never>()
@@ -24,7 +24,7 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
         }
     }
     
-    init(weatherDataService: WeatherDataServiceProtocol,
+    init(weatherDataService: AppDataServiceProtocol,
          geoLocationService: GeoLocationServiceProtocol) {
         self.weatherDataService = weatherDataService
         self.geoLocationService = geoLocationService
@@ -111,7 +111,7 @@ final class SelectedLocationViewModel: SelectedLocationViewModelProtocol {
             }
             .store(in: &cancellables)
         
-        weatherDataService.weatherLocationPublisher
+        weatherDataService.locationPublisher
             .sink { [weak self] location in
                 guard let self = self,
                       let location = location,

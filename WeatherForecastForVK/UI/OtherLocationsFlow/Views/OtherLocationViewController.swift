@@ -56,6 +56,7 @@ final class OtherLocationViewController: UIViewController {
             .sink { [weak self] locations in
                 self?.searchResults = locations
                 self?.cityTableView.reloadData()
+                print("Имя локации: \(String(describing: self?.searchResults.first?.placeName))")
             }
             .store(in: &cancellables)
     }

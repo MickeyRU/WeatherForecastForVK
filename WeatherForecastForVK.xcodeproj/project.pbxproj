@@ -44,8 +44,8 @@
 		BE0CB93F2BB0B44700A7291F /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB93E2BB0B44700A7291F /* CityCell.swift */; };
 		BE0CB9412BB0C23E00A7291F /* OtherLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9402BB0C23E00A7291F /* OtherLocationViewModel.swift */; };
 		BE0CB9442BB0C26400A7291F /* OtherLocationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9432BB0C26400A7291F /* OtherLocationViewModelProtocol.swift */; };
-		BE0CB9462BB0CA8800A7291F /* WeatherDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9452BB0CA8800A7291F /* WeatherDataServiceProtocol.swift */; };
-		BE0CB9482BB0CA9600A7291F /* WeatherDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9472BB0CA9600A7291F /* WeatherDataService.swift */; };
+		BE0CB9462BB0CA8800A7291F /* AppDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9452BB0CA8800A7291F /* AppDataServiceProtocol.swift */; };
+		BE0CB9482BB0CA9600A7291F /* AppDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CB9472BB0CA9600A7291F /* AppDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,8 +88,8 @@
 		BE0CB93E2BB0B44700A7291F /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		BE0CB9402BB0C23E00A7291F /* OtherLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherLocationViewModel.swift; sourceTree = "<group>"; };
 		BE0CB9432BB0C26400A7291F /* OtherLocationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherLocationViewModelProtocol.swift; sourceTree = "<group>"; };
-		BE0CB9452BB0CA8800A7291F /* WeatherDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataServiceProtocol.swift; sourceTree = "<group>"; };
-		BE0CB9472BB0CA9600A7291F /* WeatherDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataService.swift; sourceTree = "<group>"; };
+		BE0CB9452BB0CA8800A7291F /* AppDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataServiceProtocol.swift; sourceTree = "<group>"; };
+		BE0CB9472BB0CA9600A7291F /* AppDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +252,7 @@
 		BE0CB8F12BAC548D00A7291F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE0CB9152BAE177F00A7291F /* CollectionViewConfiguration.swift */,
 				BE0CB9252BAF0B9300A7291F /* WeatherUIModels.swift */,
 			);
 			path = Models;
@@ -261,8 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				BE0CB8FB2BAC5EAE00A7291F /* Models */,
-				BE0CB9452BB0CA8800A7291F /* WeatherDataServiceProtocol.swift */,
-				BE0CB9472BB0CA9600A7291F /* WeatherDataService.swift */,
+				BE0CB9452BB0CA8800A7291F /* AppDataServiceProtocol.swift */,
+				BE0CB9472BB0CA9600A7291F /* AppDataService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -270,10 +271,8 @@
 		BE0CB8FB2BAC5EAE00A7291F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BE0CB9312BB04B1000A7291F /* CellIconType.swift */,
 				BE0CB8F62BAC5E6D00A7291F /* WeatherModels.swift */,
 				BE0CB8FD2BAC63CF00A7291F /* LocationModels.swift */,
-				BE0CB9152BAE177F00A7291F /* CollectionViewConfiguration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +310,7 @@
 		BE0CB93D2BB0B43100A7291F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE0CB9312BB04B1000A7291F /* CellIconType.swift */,
 				BE0CB8DF2BAAFC0C00A7291F /* OtherLocationViewController.swift */,
 				BE0CB93E2BB0B44700A7291F /* CityCell.swift */,
 			);
@@ -423,9 +423,9 @@
 				BE0CB8BF2BA9C88400A7291F /* SelectedLocationViewController.swift in Sources */,
 				BE0CB9042BADF40400A7291F /* SunInfoCell.swift in Sources */,
 				BE0CB9062BADF43A00A7291F /* FeelsLikeCell.swift in Sources */,
-				BE0CB9462BB0CA8800A7291F /* WeatherDataServiceProtocol.swift in Sources */,
+				BE0CB9462BB0CA8800A7291F /* AppDataServiceProtocol.swift in Sources */,
 				BE0CB8BB2BA9C88400A7291F /* AppDelegate.swift in Sources */,
-				BE0CB9482BB0CA9600A7291F /* WeatherDataService.swift in Sources */,
+				BE0CB9482BB0CA9600A7291F /* AppDataService.swift in Sources */,
 				BE0CB9162BAE177F00A7291F /* CollectionViewConfiguration.swift in Sources */,
 				BE0CB9142BAE15D800A7291F /* DayWeatherCell.swift in Sources */,
 				BE0CB8E32BAB018900A7291F /* FooterView.swift in Sources */,

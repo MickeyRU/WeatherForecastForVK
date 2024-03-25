@@ -9,9 +9,9 @@ final class OtherLocationViewModel: OtherLocationViewModelProtocol {
     
     private var cancellables: Set<AnyCancellable> = []
     private let locationsSubject = CurrentValueSubject<[LocationInfo], Never>([])
-    private let weatherDataService: WeatherDataServiceProtocol
+    private let weatherDataService: AppDataServiceProtocol
 
-    init(weatherDataService: WeatherDataServiceProtocol) {
+    init(weatherDataService: AppDataServiceProtocol) {
         self.weatherDataService = weatherDataService
     }
     

@@ -1,17 +1,17 @@
 import Combine
 
-final class WeatherDataService: WeatherDataServiceProtocol {    
+final class AppDataService: AppDataServiceProtocol {    
     private let weatherService: WeatherServiceProtocol
     private var cancellables: Set<AnyCancellable> = []
     private let weatherResponseSubject = CurrentValueSubject<WeatherResponse?, Never>(nil)
-    private let weatherLocation = CurrentValueSubject<LocationInfo?, Never>(nil)
+    private let selectedLocation = CurrentValueSubject<LocationInfo?, Never>(nil)
     
     var weatherResponsePublisher: AnyPublisher<WeatherResponse?, Never> {
         weatherResponseSubject.eraseToAnyPublisher()
     }
     
-    var weatherLocationPublisher: AnyPublisher<LocationInfo?, Never> {
-        weatherLocation.eraseToAnyPublisher()
+    var locationPublisher: AnyPublisher<LocationInfo?, Never> {
+        selectedLocation.eraseToAnyPublisher()
     }
     
     init(weatherService: WeatherServiceProtocol) {
@@ -23,7 +23,7 @@ final class WeatherDataService: WeatherDataServiceProtocol {
             switch result {
             case .success(let weatherResponse):
                 self?.weatherResponseSubject.send(weatherResponse)
-                self?.weatherLocation.send(location)
+                self?.selectedLocation.send(location)
             case .failure(let error):
                 ErrorHandler.handle(error: .networkError(error.localizedDescription))
             }

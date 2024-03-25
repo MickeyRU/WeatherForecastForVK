@@ -8,7 +8,7 @@ protocol NavigationRouterProtocol {
 
 final class NavigationRouter: NavigationRouterProtocol {
     private let navigationController: UINavigationController
-    private let weatherDataService: WeatherDataServiceProtocol
+    private let weatherDataService: AppDataServiceProtocol
     private let geoLocationService: GeoLocationServiceProtocol
     private let weatherService: WeatherServiceProtocol
     private let layoutProvider: LayoutProviderProtocol
@@ -18,7 +18,7 @@ final class NavigationRouter: NavigationRouterProtocol {
          weatherService: WeatherServiceProtocol = WeatherService(),
          layoutProvider: LayoutProviderProtocol = LayoutProvider()) {
         self.navigationController = navigationController
-        self.weatherDataService = WeatherDataService(weatherService: weatherService)
+        self.weatherDataService = AppDataService(weatherService: weatherService)
         self.geoLocationService = geoLocationService
         self.weatherService = weatherService
         self.layoutProvider = layoutProvider

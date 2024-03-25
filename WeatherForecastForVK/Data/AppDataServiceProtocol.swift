@@ -1,8 +1,8 @@
 import Combine
 
-protocol WeatherDataServiceProtocol {
+protocol AppDataServiceProtocol {
     var weatherResponsePublisher: AnyPublisher<WeatherResponse?, Never> { get }
-    var weatherLocationPublisher: AnyPublisher<LocationInfo?, Never> { get }
+    var locationPublisher: AnyPublisher<LocationInfo?, Never> { get }
 
     func updateWeather(location: LocationInfo)
 }
