@@ -1,0 +1,12 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "error" : {
+
+    },
+    "networkError" : {
+
+    }
+  },
+  "version" : "1.0"
+}
